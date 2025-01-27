@@ -25,8 +25,9 @@ public class AimStateManager : MonoBehaviour
 
     void Update()
     {
-        float xAxis = Input.GetAxis("Horizontal");
-        float yAxis = Input.GetAxis("Vertical");
+        float xAxis = Input.GetAxis("Mouse X");
+        float yAxis = Input.GetAxis("Mouse Y");
+        yAxis =Mathf.Clamp(yAxis, -80f, 80f);
         horizontalAxis.Value += xAxis * sensitivity * Time.deltaTime;
         verticalAxis.Value += yAxis * sensitivity * Time.deltaTime;
     }
